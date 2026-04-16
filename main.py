@@ -34,7 +34,7 @@ PORT_MAP = {
     123: "NTP", 161: "SNMP",
 }
 
-DEFAULT_FAKE_HTML = """<!DOCTYPE html>
+DEFAULT_FAKE_HTML_OLD = """<!DOCTYPE html>
 <html>
 <head>
   <title>Secure Login</title>
@@ -79,6 +79,114 @@ DEFAULT_FAKE_HTML = """<!DOCTYPE html>
       No real data is collected.
     </div>
   </div>
+</body>
+</html>"""
+
+DEFAULT_FAKE_HTML = """<!DOCTYPE html>
+<html>
+<head>
+  <title>UPI Payment</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .demo-badge {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: #ff9800;
+      color: #000;
+      padding: 6px 18px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 0.9em;
+    }
+    .card {
+      background: #ffffff;
+      padding: 28px;
+      border-radius: 16px;
+      width: 360px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .app-name {
+      font-size: 1.3em;
+      color: #5f6368;
+      margin-bottom: 10px;
+    }
+    .merchant {
+      font-size: 1.1em;
+      margin: 12px 0;
+      color: #202124;
+    }
+    .amount {
+      font-size: 2.2em;
+      margin: 10px 0;
+      color: #202124;
+      font-weight: bold;
+    }
+    .upi-id {
+      font-size: 0.85em;
+      color: #5f6368;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      margin-bottom: 15px;
+      font-size: 1em;
+      background: #fafafa;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      background: #1a73e8;
+      border: none;
+      border-radius: 24px;
+      font-size: 1em;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #1669c1;
+    }
+    .warning {
+      margin-top: 18px;
+      padding: 12px;
+      background: #fdecea;
+      border: 1px solid #f28b82;
+      border-radius: 8px;
+      font-size: 0.8em;
+      color: #d93025;
+    }
+  </style>
+</head>
+<body>
+<div class="demo-badge">⚠️ CLASSROOM DEMO</div>
+<div class="card">
+  <div class="app-name">UPI</div>
+  <div class="merchant">Paying <strong>ABC Store</strong></div>
+  <div class="amount">₹2,499</div>
+  <div class="upi-id">abcstore@upi</div>
+  <input type="password" placeholder="Enter UPI PIN">
+  <button onclick="alert('⚠️ DNS Spoofing Demo!\n\nThis is a fake UPI page.\nAttackers can trick users into entering their PIN.\n\nAlways verify the app and URL.')">
+    Pay
+  </button>
+  <div class="warning">
+    ⚠️ This is a <strong>DNS Spoofing demonstration</strong>.<br>
+    You were redirected to a fake UPI interface.<br>
+    No real transaction is happening.
+  </div>
+</div>
 </body>
 </html>"""
 
@@ -583,8 +691,8 @@ with tab_demo:
     with col_cfg:
         target_domain = st.text_input(
             "Target Domain to Spoof",
-            value="www.kovailabs.online",
-            placeholder="e.g. www.kovailabs.online",
+            value="www.vilvahstore.com",
+            placeholder="e.g. www.vilvahstore.com",
             help="Any DNS query containing this string will be intercepted",
         )
         fake_ip_input = st.text_input(
@@ -720,7 +828,7 @@ Then clear the **browser's** own cache too:
 
 Type the full URL manually:
 ```
-http://www.kovailabs.online
+http://www.vilvahstore.com
 ```
 Do **not** let the browser auto-complete to `https://` — that will hit port 443
 with a self-signed cert warning (click *Advanced → Proceed* to see the fake page).
