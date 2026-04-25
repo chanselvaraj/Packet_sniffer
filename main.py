@@ -691,8 +691,8 @@ with tab_demo:
     with col_cfg:
         target_domain = st.text_input(
             "Target Domain to Spoof",
-            value="www.vilvahstore.com",
-            placeholder="e.g. www.vilvahstore.com",
+            value="www.kovailabs.online",
+            placeholder="e.g. www.kovailabs.online",
             help="Any DNS query containing this string will be intercepted",
         )
         fake_ip_input = st.text_input(
@@ -828,7 +828,7 @@ Then clear the **browser's** own cache too:
 
 Type the full URL manually:
 ```
-http://www.vilvahstore.com
+http://www.kovailabs.online
 ```
 Do **not** let the browser auto-complete to `https://` — that will hit port 443
 with a self-signed cert warning (click *Advanced → Proceed* to see the fake page).
