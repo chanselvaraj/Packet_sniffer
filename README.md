@@ -177,7 +177,7 @@ The author accepts **no responsibility** for misuse of this software.
 
 ## 📜 License
 
-MIT License — free to use for educational purposes.
+free to use for educational purposes.
 
 ---
 
