@@ -2,7 +2,7 @@
 
 A real-time network traffic analyzer with an integrated **DNS spoofing demonstration** built with Python, Streamlit, and Scapy. Designed for **cybersecurity education** to help students visualize live network activity and understand how DNS-based attacks work in a controlled lab environment.
 
-![App Screenshot](screenshot.png)
+![App Screenshot](DNS-spoofing.jpg)
 
 > ⚠️ **Educational Use Only** — The DNS spoofing feature must only be used on networks you own or have explicit permission to test on. Misuse may violate laws in your jurisdiction.
 
